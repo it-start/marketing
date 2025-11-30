@@ -12,6 +12,7 @@ export const translations: Record<Language, TranslationKeys> = {
     'nav.ai_studio': 'AI Студия',
     'nav.pricing': 'Цены',
     'nav.contact': 'Контакты',
+    'nav.docs': 'Инструкция',
     
     // Home
     'home.title.prefix': 'Andrey M',
@@ -77,6 +78,19 @@ export const translations: Record<Language, TranslationKeys> = {
     'contact.sent.title': 'Сообщение отправлено!',
     'contact.sent.desc': 'Я свяжусь с вами в течение 24 часов.',
     'contact.sent.another': 'Отправить еще',
+
+    // Docs
+    'docs.title': 'Подключение к Telegram',
+    'docs.subtitle': 'Как превратить этот сайт в Mini App',
+    'docs.step1.title': 'Шаг 1: BotFather',
+    'docs.step1.desc': 'Откройте @BotFather в Telegram и создайте нового бота командой /newbot или выберите существующего.',
+    'docs.step2.title': 'Шаг 2: Создание приложения',
+    'docs.step2.desc': 'Отправьте команду /newapp боту BotFather. Следуйте инструкциям (введите название и описание).',
+    'docs.step3.title': 'Шаг 3: Ссылка на приложение',
+    'docs.step3.desc': 'Когда BotFather попросит "Web App URL", отправьте ссылку на этот сайт (например, https://your-domain.vercel.app).',
+    'docs.step3.note': 'Важно: Сайт должен работать на HTTPS.',
+    'docs.step4.title': 'Шаг 4: Готово',
+    'docs.step4.desc': 'Теперь ваше приложение доступно по ссылке t.me/botname/appname или через кнопку меню, если вы настроили её через "Menu Button".',
   },
   en: {
     // Navigation
@@ -85,6 +99,7 @@ export const translations: Record<Language, TranslationKeys> = {
     'nav.ai_studio': 'AI Studio',
     'nav.pricing': 'Pricing',
     'nav.contact': 'Contact',
+    'nav.docs': 'Setup Guide',
 
     // Home
     'home.title.prefix': 'Andrey M',
@@ -150,5 +165,18 @@ export const translations: Record<Language, TranslationKeys> = {
     'contact.sent.title': 'Message Sent!',
     'contact.sent.desc': "I'll get back to you within 24 hours.",
     'contact.sent.another': 'Send another',
+
+    // Docs
+    'docs.title': 'Telegram Integration',
+    'docs.subtitle': 'How to turn this site into a Mini App',
+    'docs.step1.title': 'Step 1: BotFather',
+    'docs.step1.desc': 'Open @BotFather in Telegram and create a new bot with /newbot or select an existing one.',
+    'docs.step2.title': 'Step 2: Create Web App',
+    'docs.step2.desc': 'Send /newapp to BotFather. Follow the prompts for title and description.',
+    'docs.step3.title': 'Step 3: App URL',
+    'docs.step3.desc': 'When asked for the "Web App URL", paste the link to this deployed website (e.g., https://your-domain.vercel.app).',
+    'docs.step3.note': 'Note: The site must be served over HTTPS.',
+    'docs.step4.title': 'Step 4: Done',
+    'docs.step4.desc': 'Your app is now accessible via t.me/botname/appname or via the Menu Button if configured.',
   }
 };

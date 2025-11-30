@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Layout, Briefcase, Zap, DollarSign, User, Menu, X, Globe, Moon, Sun } from 'lucide-react';
+import { Layout, Briefcase, Zap, DollarSign, User, Menu, X, Globe, Moon, Sun, Book } from 'lucide-react';
 import Expertise from './components/Expertise';
 import ImageEditor from './components/ImageEditor';
 import Pricing from './components/Pricing';
 import Contact from './components/Contact';
+import Docs from './components/Docs';
 import { AppSection } from './types';
 import { AppProvider, useAppContext } from './context';
 
@@ -18,6 +19,7 @@ const MainApp: React.FC = () => {
     { id: AppSection.AI_STUDIO, label: t('nav.ai_studio'), icon: <Zap className="w-5 h-5" /> },
     { id: AppSection.PRICING, label: t('nav.pricing'), icon: <DollarSign className="w-5 h-5" /> },
     { id: AppSection.CONTACT, label: t('nav.contact'), icon: <User className="w-5 h-5" /> },
+    { id: AppSection.DOCS, label: t('nav.docs'), icon: <Book className="w-5 h-5" /> },
   ];
 
   const renderContent = () => {
@@ -27,10 +29,14 @@ const MainApp: React.FC = () => {
           <div className="flex flex-col items-center justify-center min-h-[60vh] text-center space-y-6 animate-fadeIn pb-24">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
-              <div className="relative w-32 h-32 bg-slate-100 dark:bg-card rounded-full flex items-center justify-center border-2 border-slate-200 dark:border-white/10 overflow-hidden">
-                 {/* Placeholder avatar - in a real app, this would be the user's uploaded image */}
+              <div className="relative w-36 h-36 bg-slate-100 dark:bg-card rounded-full flex items-center justify-center border-4 border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl">
                  <img 
-                  src="https://picsum.photos/300/300?grayscale" 
+                  src="/avatar.jpg" 
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80";
+                  }}
                   alt="Andrey M. Avatar" 
                   className="w-full h-full object-cover" 
                  />
@@ -86,6 +92,8 @@ const MainApp: React.FC = () => {
         return <Pricing onContactClick={() => setActiveSection(AppSection.CONTACT)} />;
       case AppSection.CONTACT:
         return <Contact />;
+      case AppSection.DOCS:
+        return <Docs />;
       default:
         return null;
     }

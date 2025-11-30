@@ -23,7 +23,7 @@ const Pricing: React.FC<{ onContactClick: () => void }> = ({ onContactClick }) =
     {
       id: 'full',
       name: t('pricing.tier.full'),
-      price: '$1,500/mo',
+      price: 'BAT2,500/mo',
       features: t('pricing.feat.full') as string[]
     }
   ];

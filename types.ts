@@ -3,7 +3,8 @@ export enum AppSection {
   EXPERTISE = 'EXPERTISE',
   AI_STUDIO = 'AI_STUDIO',
   PRICING = 'PRICING',
-  CONTACT = 'CONTACT'
+  CONTACT = 'CONTACT',
+  DOCS = 'DOCS'
 }
 
 export type Language = 'ru' | 'en';
