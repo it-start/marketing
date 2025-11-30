@@ -31,11 +31,13 @@ const MainApp: React.FC = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
               <div className="relative w-36 h-36 bg-slate-100 dark:bg-card rounded-full flex items-center justify-center border-4 border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl">
                  <img 
-                  src="/avatar.jpg" 
+                  src="avatar.png" 
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.onerror = null;
-                    target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80";
+                    // Prevent infinite loop if both fail
+                    if (target.src.includes('public/avatar.png')) return;
+                    // Fallback to physical path if root path fails
+                    target.src = "public/avatar.png";
                   }}
                   alt="Andrey M. Avatar" 
                   className="w-full h-full object-cover" 
