@@ -31,25 +31,11 @@ const MainApp: React.FC = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
               <div className="relative w-36 h-36 bg-slate-100 dark:bg-card rounded-full flex items-center justify-center border-4 border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl">
                  <img 
-                  src="./avatar.png" 
+                  src="/avatar.png" 
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    const src = target.src;
-                    
-                    // 1. If ./avatar.png fails, try public/avatar.png (common in some dev setups)
-                    if (src.endsWith('/avatar.png') && !src.includes('public')) {
-                      target.src = '/avatar.png';
-                      return;
-                    }
-                    
-                    // 2. If that fails, try /avatar.png (root absolute)
-                    if (src.includes('public/avatar.png')) {
-                       target.src = '/avatar.png';
-                       return;
-                    }
-
-                    // 3. Final fallback to a professional placeholder so the UI isn't broken
-                    // This ensures the user sees *something* nice even if local file linking fails
+                    // Prevent infinite loop: if already using fallback, stop.
+                    if (target.src.includes('unsplash')) return;
                     target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80";
                   }}
                   alt="Andrey M. Avatar" 
