@@ -6,6 +6,8 @@ export enum AppSection {
   CONTACT = 'CONTACT'
 }
 
+export type Language = 'ru' | 'en';
+
 export interface PricingTier {
   id: string;
   name: string;
