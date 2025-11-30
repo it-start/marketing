@@ -32,12 +32,6 @@ const MainApp: React.FC = () => {
               <div className="relative w-36 h-36 bg-slate-100 dark:bg-card rounded-full flex items-center justify-center border-4 border-slate-200 dark:border-white/10 overflow-hidden shadow-2xl">
                  <img 
                   src="/avatar.png" 
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    // Prevent infinite loop: if already using fallback, stop.
-                    if (target.src.includes('unsplash')) return;
-                    target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80";
-                  }}
                   alt="Andrey M. Avatar" 
                   className="w-full h-full object-cover" 
                  />
