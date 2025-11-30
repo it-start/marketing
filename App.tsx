@@ -38,13 +38,13 @@ const MainApp: React.FC = () => {
                     
                     // 1. If ./avatar.png fails, try public/avatar.png (common in some dev setups)
                     if (src.endsWith('/avatar.png') && !src.includes('public')) {
-                      target.src = 'public/avatar.png';
+                      target.src = '/avatar.png';
                       return;
                     }
                     
                     // 2. If that fails, try /avatar.png (root absolute)
                     if (src.includes('public/avatar.png')) {
-                       target.src = 'public/avatar.png';
+                       target.src = '/avatar.png';
                        return;
                     }
 
